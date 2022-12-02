@@ -4,7 +4,7 @@
 #include <fstream>
 
 using namespace std;
-const string INPUT_STREAM_NAME = "cal_input.txt";
+const string INPUT_STREAM_NAME = "day01.txt";
 int main() 
 {
     string line;
@@ -35,9 +35,5 @@ int main()
         cout << sum << endl;
         file.close();
     } else cout << "Unable to open file";
-
-
-   
-    
     return 0;
 }
