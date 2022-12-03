@@ -44,16 +44,18 @@ void get_p1() {
 
             sum += me;
             int res = pos_residue((opponent - me), 3);
-            cout << "Opponent: " << opponent << " Me: " << me << " Residue: " << res << '\n';
+            const int W = 2;
+            const int L = 1;
+            const int D = 0;
             
             switch(res){
-                case 0:
+                case D:
                 // Draw
                     sum += 3;
                     break;
-                case 1:
+                case L:
                     break;
-                case 2:
+                case W:
                     // Win
                     sum += 6;
                     break;
@@ -64,7 +66,7 @@ void get_p1() {
     } else cout << "Unable to open file";
 }
 
-void get_p2() {
+void get_p2() {    
     string line;
     ifstream file(INPUT_STREAM_NAME);
     ios_base::sync_with_stdio(false);
@@ -75,29 +77,32 @@ void get_p2() {
         while(getline(file, line)) {
             int opponent = translate(line[0], OPPONENT);
             int me = translate(line[2], ME);
-
-            sum += me;
-            int res = pos_residue((opponent - me), 3);
-            cout << "Opponent: " << opponent << " Me: " << me << " Residue: " << res << '\n';
             
-            switch(res){
-                case 0:
+            const int L = 1;
+            const int D = 2;
+            const int W = 3;
+            sum += (me - 1) * 3;
+            cout << "Sum A: " << sum << '\n';
+
+            switch(me){
+                case D:
                 // Draw
-                    sum += 3;
+                    sum += opponent + 3;
                     break;
-                case 1:
+                case L:
+                    sum += pos_residue(opponent + 2, 3);
                     break;
-                case 2:
+                case W:
                     // Win
-                    sum += 6;
+                    sum += pos_residue(opponent + 1, 3);
                     break;
             }
+            cout << "Sum B: " << sum << '\n';
         }
-        cout << "Sum for part 1: " << sum << '\n';
+        cout << "Sum for part 2: " << sum << '\n';
         file.close();
     } else cout << "Unable to open file";
 }
-
 int main() {
     
     get_p1();
