@@ -12,10 +12,6 @@ const string INPUT_STREAM_NAME = "day02.txt";
 const int DRAW = 3;
 const int WIN = 6;
 
-
-
-
-
 char translate(char s) {
     if (s == 'A' || s == 'X') {
         return 'R';
