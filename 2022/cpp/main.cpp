@@ -25,7 +25,7 @@ int main () {
         if(file.is_open()) {
             while(getline(file, line)) {
                 if (line.find("day0X") != string::npos) {
-                    line.replace(line.find("day0X"), 5, file_name + to_string(i));
+                    line.replace(line.find("day0X"), 5, file_name);
                 }
                 outfile << line << endl;
             }

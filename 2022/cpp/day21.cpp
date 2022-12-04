@@ -3,7 +3,7 @@
 #include <fstream>
 
 using namespace std;
-const string INPUT_STREAM_NAME = "day2121.txt";
+const string INPUT_STREAM_NAME = "day21.txt";
 
 void get_p1() {
     string line;
