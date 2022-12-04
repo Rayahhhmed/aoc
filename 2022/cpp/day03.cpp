@@ -4,7 +4,7 @@
 #include <fstream>
 
 using namespace std;
-const string INPUT_STREAM_NAME = "day03.txt";
+const string INPUT_STREAM_NAME = "day04.txt";
 
 void get_p1() {
     string line;
@@ -118,5 +118,6 @@ int main() {
     get_p2();
     return 0;
 }
+
 
 
